@@ -14,6 +14,7 @@
 # Load required libraries
 library(RColorBrewer)
 library(lattice)
+library(grid)
 
 # Import file
 filename <- "Era20C_NHemisphere"
@@ -43,10 +44,9 @@ T <-t(T)
 lim <- max(abs(T))
 lim <- round(lim*10)/10
 
-
 # color pallette
 my.palette <- rev(brewer.pal(n = 11, name = "RdBu"))
-my.palette = colorRampPalette(my.palette)(100)
+my.palette = colorRampPalette(my.palette)(200)
 
 # plot 1
 png(paste0('WM_',filename,"_legend.png"),height=300, width=1000)                              
